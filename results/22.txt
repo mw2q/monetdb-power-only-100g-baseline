@@ -1,0 +1,46 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	cntrycode,
+	count(*) as numcust,
+	sum(c_acctbal) as totacctbal
+from
+	(
+		select
+			substring(c_phone, 1, 2) as cntrycode,
+			c_acctbal
+		from
+			customer
+		where
+			substring(c_phone, 1, 2) in
+				('17', '13', '25', '24', '33', '11', '16')
+			and c_acctbal > (
+				select
+					avg(c_acctbal)
+				from
+					customer
+				where
+					c_acctbal > 0.00
+					and substring(c_phone, 1, 2) in
+						('17', '13', '25', '24', '33', '11', '16')
+			)
+			and not exists (
+				select
+					*
+				from
+					orders
+				where
++-----------------+---------+-------------------------------------------+
+| cntrycode       | numcust | totacctbal                                |
++=================+=========+===========================================+
+| 11              |   90469 |                              679062496.72 |
+| 13              |   90797 |                              679775134.50 |
+| 16              |   90683 |                              680004633.28 |
+| 17              |   91368 |                              685300110.44 |
+| 24              |   90673 |                              680222968.56 |
+| 25              |   90741 |                              680478662.79 |
+| 33              |   90588 |                              679623814.10 |
++-----------------+---------+-------------------------------------------+
+7 tuples
+COMMIT;
+auto commit mode: on

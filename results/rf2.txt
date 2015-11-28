@@ -1,0 +1,9 @@
+Wed Nov 25 21:39:14 CET 2015: Stream 1 : Starting Refresh Stream 2...
+auto commit mode: on
+operation successful
+150000 affected rows
+600572 affected rows
+150000 affected rows
+auto commit mode: on
+Wed Nov 25 21:39:16 CET 2015: Stream 1 : Refresh Stream 2 completed.
+Stream 1 : Elapsed time for Refresh Stream 2 : 2 seconds

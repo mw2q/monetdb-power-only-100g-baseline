@@ -1,0 +1,27 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#14'
+	and p_container = 'WRAP BAG'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);
++-------------------------------------------+
+| avg_yearly                                |
++===========================================+
+|                              32294489.964 |
++-------------------------------------------+
+1 tuple
+COMMIT;
+auto commit mode: on

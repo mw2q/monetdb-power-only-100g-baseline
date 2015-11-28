@@ -1,0 +1,74 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	c_count,
+	count(*) as custdist
+from
+	(
+		select
+			c_custkey,
+			count(o_orderkey)
+		from
+			customer left outer join orders on
+				c_custkey = o_custkey
+				and o_comment not like '%pending%requests%'
+		group by
+			c_custkey
+	) as c_orders (c_custkey, c_count)
+group by
+	c_count
+order by
+	custdist desc,
+	c_count desc;
++---------+----------+
+| c_count | custdist |
++=========+==========+
+|       0 |  5000181 |
+|      10 |   676560 |
+|       9 |   663362 |
+|      11 |   632899 |
+|       8 |   589396 |
+|      12 |   563873 |
+|      13 |   494018 |
+|      19 |   476480 |
+|      18 |   467730 |
+|      20 |   466202 |
+|       7 |   462444 |
+|      17 |   449820 |
+|      14 |   444994 |
+|      21 |   435603 |
+|      16 |   430263 |
+|      15 |   424267 |
+|      22 |   389137 |
+|      23 |   331799 |
+|       6 |   317786 |
+|      24 |   271171 |
+|      25 |   210984 |
+|       5 |   185544 |
+|      26 |   157433 |
+|      27 |   113179 |
+|       4 |    89290 |
+|      28 |    78088 |
+|      29 |    51735 |
+|       3 |    34431 |
+|      30 |    33027 |
+|      31 |    20183 |
+|      32 |    11780 |
+|       2 |     9895 |
+|      33 |     6771 |
+|      34 |     3710 |
+|      35 |     1983 |
+|       1 |     1839 |
+|      36 |     1108 |
+|      37 |      529 |
+|      38 |      268 |
+|      39 |      131 |
+|      40 |       54 |
+|      41 |       36 |
+|      42 |        9 |
+|      43 |        5 |
+|      44 |        3 |
++---------+----------+
+45 tuples
+COMMIT;
+auto commit mode: on

@@ -1,0 +1,9 @@
+Error in file(file, "rt") : cannot open the connection
+Calls: read.csv -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'monetdb-power-only-100g-baseline/q_time.csv': No such file or directory
+Execution halted
+Error in rep.int(space[1L], NR - 1) : invalid 'times' value
+Calls: barplot -> barplot.default -> rep.int -> rep.int
+Execution halted

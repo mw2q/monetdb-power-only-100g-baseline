@@ -1,0 +1,61 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	c_custkey,
+	c_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	c_acctbal,
+	n_name,
+	c_address,
+	c_phone,
+	c_comment
+from
+	customer,
+	orders,
+	lineitem,
+	nation
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate >= date '1993-12-01'
+	and o_orderdate < date '1993-12-01' + interval '3' month
+	and l_returnflag = 'R'
+	and c_nationkey = n_nationkey
+group by
+	c_custkey,
+	c_name,
+	c_acctbal,
+	c_phone,
+	n_name,
+	c_address,
+	c_comment
+order by
+	revenue desc
+LIMIT 20;
++-----------+--------------------+-------------------------------------------+-------------------+---------------------------+------------------------------------------+-----------------+---------------------------------------------------------------------------------------------------------------+
+| c_custkey | c_name             | revenue                                   | c_acctbal         | n_name                    | c_address                                | c_phone         | c_comment                                                                                                     |
++===========+====================+===========================================+===================+===========================+==========================================+=================+===============================================================================================================+
+|   9757984 | Customer#009757984 |                               953727.5836 |           -896.32 | SAUDI ARABIA              | hV l,I1,fW                               | 30-350-170-6212 | rding to the packages dazzle against the carefully ironic requests. carefully pending deposits alongside o    |
+|   9070909 | Customer#009070909 |                               885724.5137 |           -184.71 | FRANCE                    | CteM3dM,cPrMfZ0aDUvqS9t                  | 16-802-303-2636 | en accounts cajole after the regular acco                                                                     |
+|   8696602 | Customer#008696602 |                               884353.0633 |           2561.69 | MOZAMBIQUE                | J5rjKNgVJlMzb6ipSp5lUFtbZInDsPrfB        | 26-929-290-6053 | tructions across the slyly unusual deposits sleep among the daring, special deposits. even, final ideas       |
+|  12270070 | Customer#012270070 |                               865966.9631 |           2216.06 | ROMANIA                   | oN85noAx66RastrYvyggWBMjCjtz8VzsynsfyQm  | 29-763-594-1282 | each alongside of the final requests. slowly final i                                                          |
+|   8886850 | Customer#008886850 |                               857434.5415 |           6297.20 | ROMANIA                   | FbuzsAR3bCkTJw9qs4SNBhYKrv4k4fw4 NQ      | 29-994-239-5897 | s play about the blithely silent pinto beans. regular depos                                                   |
+|  11604718 | Customer#011604718 |                               844783.8509 |           3800.67 | ROMANIA                   | hAj h7Ptilm                              | 29-418-831-7045 | ong the fluffily ironic instructions. final packa                                                             |
+|   8905990 | Customer#008905990 |                               836285.5939 |           1227.76 | PERU                      | sXPWSe9Ec0ETM8T 3f 9ZKHIaaiA2CUc2dn3     | 27-615-500-4522 | riously pending epitaphs run furiously. furiously final ideas                                                 |
+|  10584121 | Customer#010584121 |                               833908.5655 |           3799.69 | FRANCE                    | PY6 h80fxx3OBFu9h N68tfi9lHAol4          | 16-547-637-6427 | blithely. silently unusual foxes boost blithely daringly pending ideas. carefully unus                        |
+|   3929032 | Customer#003929032 |                               824771.7646 |           -193.74 | VIETNAM                   | F1VtocD5MlGgWXdyAlJVBQLBuF99zldq3T,o8k7p | 31-404-431-9041 | ide of the blithely even platelets cajole according to the final, even packages. furio                        |
+|   6942217 | Customer#006942217 |                               804664.2346 |           7116.61 | ALGERIA                   | IqrpfJW,JuvAon                           | 10-288-100-4896 | ular instructions are express, bold instructions. quickly final requests wake furi                            |
+|   1308169 | Customer#001308169 |                               793005.5402 |           3525.86 | MOZAMBIQUE                | Y6g5cnfe9SzbxVm30uvxXh                   | 26-418-691-2983 | e furiously about the furiously regular courts. furiously unus                                                |
+|   4215691 | Customer#004215691 |                               792523.1584 |           5601.13 | GERMANY                   | AY,EZOX3s731hhq8FBbHWJYkrrUEvurp         | 17-529-192-4402 | ut the express, even platelets cajole boldly after the blithely unusual instructions. final                   |
+|   5282035 | Customer#005282035 |                               791741.0036 |           2327.29 | PERU                      | mfsi74B,QWCoyfwDDGe                      | 27-829-247-2915 | sleep carefully above the carefully regular multipliers. blithely regular depths atop the regular packages ha |
+|   5522239 | Customer#005522239 |                               787528.1028 |           1032.44 | JAPAN                     | OGacQC4M9ed                              | 22-310-857-7846 | ons. ideas detect blithely blithely busy requests. carefully express ideas wake slyly unusual deposits. pen   |
+|   8058430 | Customer#008058430 |                               781242.7532 |           6881.81 | FRANCE                    | nwGNlrxYZKBoje,Axv                       | 16-239-928-8181 | al accounts. dolphins nag careful sauternes. accounts integrate f                                             |
+|   3430732 | Customer#003430732 |                               774962.4307 |             32.19 | CHINA                     | sxEhd0oaKljhzdkLVhE                      | 28-567-697-5983 | es boost slowly stealthily pending theodolites. carefully even packages cajole. regular accounts sleep blith  |
+|  11556097 | Customer#011556097 |                               773987.7041 |           1214.59 | INDONESIA                 | 3qBjh2F0bNSmtpERjrHsv1SSmesziCyF         | 19-612-493-1912 | al accounts solve after the blithely regular deposits. furiously special accounts sub                         |
+|   5495098 | Customer#005495098 |                               766541.7336 |           9918.75 | INDONESIA                 | NvR2jXzgQhR2cgU                          | 19-420-657-6366 | ic platelets are slyly special, special packages. evenly ironic requests after th                             |
+|    788764 | Customer#000788764 |                               761049.7984 |           8267.39 | MOZAMBIQUE                | nuLjMTbPuWSlqqpnfxWB                     | 26-663-396-2156 |  ironic dependencies wake. blithely even courts sleep. slyly even p                                           |
+|   6521656 | Customer#006521656 |                               760582.3716 |           4207.92 | UNITED STATES             | Wvh05W5kOaPrtxEA6NThY,rI                 | 34-945-673-1735 | refully pending accounts above the blithely regular                                                           |
++-----------+--------------------+-------------------------------------------+-------------------+---------------------------+------------------------------------------+-----------------+---------------------------------------------------------------------------------------------------------------+
+20 tuples
+COMMIT;
+auto commit mode: on

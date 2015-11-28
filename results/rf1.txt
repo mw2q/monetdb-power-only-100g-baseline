@@ -1,0 +1,9 @@
+TPC-H Population Generator (Version 2.17.0)
+Copyright Transaction Processing Performance Council 1994 - 2010
+Wed Nov 25 20:57:29 CET 2015: Stream 1 : Starting Refresh Stream 1...
+auto commit mode: on
+599976 affected rows
+150000 affected rows
+auto commit mode: on
+Wed Nov 25 20:57:56 CET 2015: Stream 1 : Refresh Stream 1 completed.
+Stream 1 : Elapsed time for Refresh Stream 1 : 27 seconds

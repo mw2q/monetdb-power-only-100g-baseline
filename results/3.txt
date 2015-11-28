@@ -1,0 +1,42 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'AUTOMOBILE'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-28'
+	and l_shipdate > date '1995-03-28'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+LIMIT 10;
++------------+-------------------------------------------+-------------+----------------+
+| l_orderkey | revenue                                   | o_orderdate | o_shippriority |
++============+===========================================+=============+================+
+|   92511430 |                               514726.4896 | 1995-03-06  |              0 |
+|  244922438 |                               477787.1929 | 1995-03-15  |              0 |
+|  463094850 |                               466746.6518 | 1995-03-25  |              0 |
+|  415835168 |                               465291.7930 | 1995-03-19  |              0 |
+|  334463749 |                               464578.3585 | 1995-03-27  |              0 |
+|  449631457 |                               462369.5819 | 1995-03-18  |              0 |
+|  244178529 |                               459254.3866 | 1995-03-16  |              0 |
+|  188390981 |                               458617.4703 | 1995-03-11  |              0 |
+|  241099140 |                               457910.6038 | 1995-03-12  |              0 |
+|   53851907 |                               457897.7762 | 1995-03-27  |              0 |
++------------+-------------------------------------------+-------------+----------------+
+10 tuples
+COMMIT;
+auto commit mode: on

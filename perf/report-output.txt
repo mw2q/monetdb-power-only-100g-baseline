@@ -1,0 +1,294 @@
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate osq_lock:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate native_write_msr_safe:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate osq_lock:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate call_function_interrupt:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate call_function_interrupt:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate call_function_interrupt:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate smaps_pte_entry.isra.13:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate memset:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate memset:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate smaps_pte_entry.isra.13:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/lib64/sa/sadc, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/lib64/sa/sadc, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/lib64/sa/sadc, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+Can't annotate call_function_interrupt:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate intel_idle:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux
+no symbols found in /usr/bin/pidstat, maybe install a debug package?
+Can't annotate page_fault:
+
+No vmlinux file with build id 3a52ecfb79f622685d1bfb12d441d2d9f0975ab2
+was found in the path.
+
+Please use:
+
+  perf buildid-cache -vu vmlinux
+
+or:
+
+  --vmlinux vmlinux

@@ -1,0 +1,140 @@
+START TRANSACTION;
+auto commit mode: off
+select
+	s_name,
+	count(*) as numwait
+from
+	supplier,
+	lineitem l1,
+	orders,
+	nation
+where
+	s_suppkey = l1.l_suppkey
+	and o_orderkey = l1.l_orderkey
+	and o_orderstatus = 'F'
+	and l1.l_receiptdate > l1.l_commitdate
+	and exists (
+		select
+			*
+		from
+			lineitem l2
+		where
+			l2.l_orderkey = l1.l_orderkey
+			and l2.l_suppkey <> l1.l_suppkey
+	)
+	and not exists (
+		select
+			*
+		from
+			lineitem l3
+		where
+			l3.l_orderkey = l1.l_orderkey
+			and l3.l_suppkey <> l1.l_suppkey
+			and l3.l_receiptdate > l3.l_commitdate
++---------------------------+---------+
+| s_name                    | numwait |
++===========================+=========+
+| Supplier#000025825        |      24 |
+| Supplier#000075230        |      24 |
+| Supplier#000305312        |      24 |
+| Supplier#000360794        |      24 |
+| Supplier#000563328        |      24 |
+| Supplier#000720242        |      24 |
+| Supplier#000745497        |      24 |
+| Supplier#000043499        |      23 |
+| Supplier#000126655        |      23 |
+| Supplier#000265297        |      23 |
+| Supplier#000355814        |      23 |
+| Supplier#000769251        |      23 |
+| Supplier#000778047        |      23 |
+| Supplier#000803015        |      23 |
+| Supplier#000023776        |      22 |
+| Supplier#000069731        |      22 |
+| Supplier#000121322        |      22 |
+| Supplier#000158876        |      22 |
+| Supplier#000215186        |      22 |
+| Supplier#000271370        |      22 |
+| Supplier#000336653        |      22 |
+| Supplier#000371071        |      22 |
+| Supplier#000646826        |      22 |
+| Supplier#000675834        |      22 |
+| Supplier#000712535        |      22 |
+| Supplier#000752123        |      22 |
+| Supplier#000776086        |      22 |
+| Supplier#000006068        |      21 |
+| Supplier#000034517        |      21 |
+| Supplier#000067392        |      21 |
+| Supplier#000072356        |      21 |
+| Supplier#000107826        |      21 |
+| Supplier#000108489        |      21 |
+| Supplier#000148866        |      21 |
+| Supplier#000156936        |      21 |
+| Supplier#000165858        |      21 |
+| Supplier#000172100        |      21 |
+| Supplier#000250795        |      21 |
+| Supplier#000268409        |      21 |
+| Supplier#000282375        |      21 |
+| Supplier#000288865        |      21 |
+| Supplier#000295246        |      21 |
+| Supplier#000336604        |      21 |
+| Supplier#000348599        |      21 |
+| Supplier#000359081        |      21 |
+| Supplier#000372401        |      21 |
+| Supplier#000381595        |      21 |
+| Supplier#000412292        |      21 |
+| Supplier#000444465        |      21 |
+| Supplier#000511908        |      21 |
+| Supplier#000529703        |      21 |
+| Supplier#000535067        |      21 |
+| Supplier#000555690        |      21 |
+| Supplier#000558391        |      21 |
+| Supplier#000571334        |      21 |
+| Supplier#000590220        |      21 |
+| Supplier#000722366        |      21 |
+| Supplier#000724621        |      21 |
+| Supplier#000853926        |      21 |
+| Supplier#000890357        |      21 |
+| Supplier#000941025        |      21 |
+| Supplier#000949679        |      21 |
+| Supplier#000969131        |      21 |
+| Supplier#000998096        |      21 |
+| Supplier#000998689        |      21 |
+| Supplier#000021777        |      20 |
+| Supplier#000030993        |      20 |
+| Supplier#000039242        |      20 |
+| Supplier#000040911        |      20 |
+| Supplier#000041693        |      20 |
+| Supplier#000046538        |      20 |
+| Supplier#000064876        |      20 |
+| Supplier#000070659        |      20 |
+| Supplier#000085233        |      20 |
+| Supplier#000098425        |      20 |
+| Supplier#000147230        |      20 |
+| Supplier#000165324        |      20 |
+| Supplier#000167829        |      20 |
+| Supplier#000198513        |      20 |
+| Supplier#000199213        |      20 |
+| Supplier#000236382        |      20 |
+| Supplier#000274877        |      20 |
+| Supplier#000298433        |      20 |
+| Supplier#000329141        |      20 |
+| Supplier#000333752        |      20 |
+| Supplier#000341414        |      20 |
+| Supplier#000360654        |      20 |
+| Supplier#000374782        |      20 |
+| Supplier#000384059        |      20 |
+| Supplier#000386149        |      20 |
+| Supplier#000393614        |      20 |
+| Supplier#000413564        |      20 |
+| Supplier#000442404        |      20 |
+| Supplier#000460474        |      20 |
+| Supplier#000485539        |      20 |
+| Supplier#000528186        |      20 |
+| Supplier#000577890        |      20 |
+| Supplier#000579867        |      20 |
+| Supplier#000583955        |      20 |
+| Supplier#000587290        |      20 |
++---------------------------+---------+
+100 tuples
+COMMIT;
+auto commit mode: on
